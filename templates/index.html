@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Educational Cybersecurity Awareness Toolkit for URL warning signs and password composition.">
+  <title>Cybersecurity Awareness Toolkit</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">⌁</span><div><strong>CyberShield</strong><small>Awareness Toolkit</small></div></div>
+    <span class="status"><i></i> EDUCATIONAL DEMO</span>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">STAY ALERT. STAY SECURE.</p>
+      <h1>Make smarter <span>security decisions.</span></h1>
+      <p class="sub">Check common URL warning signs, review password composition, and inspect a CSV sample — all in one simple dashboard.</p>
+      <div class="notice">⚠ This is an educational heuristic tool, not a definitive malware or phishing detector.</div>
+    </section>
+    <nav class="tabs" aria-label="Toolkit sections">
+      <button class="tab active" data-panel="urlPanel">⌕ URL Inspector</button>
+      <button class="tab" data-panel="passwordPanel">▣ Password Check</button>
+      <button class="tab" data-panel="datasetPanel">▤ Dataset Review</button>
+    </nav>
+    <section class="panel active" id="urlPanel">
+      <div class="section-head"><div><p class="eyebrow">LINK ANALYSIS</p><h2>Inspect a URL</h2><p class="muted">Looks for simple warning signs without visiting the website.</p></div><span class="pill">01 / 03</span></div>
+      <form id="urlForm" class="tool-form"><label for="urlInput">Website URL</label><div class="input-row"><input id="urlInput" type="text" placeholder="https://example.com" required maxlength="2048"><button class="primary" type="submit">Analyze URL <span>→</span></button></div><p class="hint">Try a sample URL such as https://example.com</p></form>
+      <div id="urlResult" class="result hidden" aria-live="polite"></div>
+    </section>
+    <section class="panel" id="passwordPanel">
+      <div class="section-head"><div><p class="eyebrow">PASSWORD HYGIENE</p><h2>Check composition</h2><p class="muted">Use a made-up test password — never enter a password you actually use.</p></div><span class="pill">02 / 03</span></div>
+      <form id="passwordForm" class="tool-form"><label for="passwordInput">Test password</label><div class="input-row"><input id="passwordInput" type="password" autocomplete="off" placeholder="Enter a sample password" required maxlength="512"><button class="secondary" type="button" id="togglePassword">Show</button><button class="primary" type="submit">Check strength →</button></div><p class="hint">The app does not store or intentionally log the password. This is a basic composition check, not a breach check.</p></form>
+      <div id="passwordResult" class="result hidden" aria-live="polite"></div>
+    </section>
+    <section class="panel" id="datasetPanel">
+      <div class="section-head"><div><p class="eyebrow">BATCH REVIEW</p><h2>Review a CSV dataset</h2><p class="muted">Upload a CSV containing a column named <code>URL</code>. Optional: <code>ExampleLabel</code>.</p></div><span class="pill">03 / 03</span></div>
+      <form id="datasetForm" class="tool-form"><label for="csvInput">CSV file (maximum 1 MB, up to 200 rows)</label><div class="input-row"><input id="csvInput" type="file" accept=".csv,text/csv" required><button class="primary" type="submit">Review dataset →</button></div><p class="hint">The file is processed for this request only; results are not saved by this demo.</p></form>
+      <div id="datasetResult" class="result hidden" aria-live="polite"></div>
+    </section>
+    <section class="bottom-grid">
+      <article class="mini-card"><span class="mini-icon">◈</span><h3>Think before you click</h3><p>Check the exact domain spelling and open important services using trusted bookmarks.</p></article>
+      <article class="mini-card"><span class="mini-icon">⌑</span><h3>Use unique passwords</h3><p>Use a password manager and a different password for every account.</p></article>
+      <article class="mini-card"><span class="mini-icon">◎</span><h3>Know the limits</h3><p>HTTPS alone does not prove trustworthiness. This checker does not query live threat feeds.</p></article>
+    </section>
+    <footer>Cybersecurity Awareness Toolkit · Student project by Atul Gond · For education only</footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
