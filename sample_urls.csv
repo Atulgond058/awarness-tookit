@@ -1,0 +1,6 @@
+URL,ExampleLabel
+https://www.example.com,Benign demonstration domain
+http://192.0.2.10/login/verify,Documentation-only IP example with warning signs
+https://account-security.example.net/verify,Training example with urgency-related words
+http://bit.ly/demo-link,URL shortener example; destination is obscured
+https://www.wikipedia.org,Benign demonstration domain
